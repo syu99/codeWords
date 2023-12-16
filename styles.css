@@ -1,0 +1,81 @@
+body {
+  background-color: #000;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-weight: 900;
+}
+
+h2 {
+  color: #00ff00;
+}
+#instructions {
+  font-size: 12px;
+  color: #00ff00;
+  margin-bottom: 10px;
+}
+
+#container {
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  margin: 10px; /* Ajout de marges pour un meilleur espacement */
+}
+
+#buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  margin: 5px;
+  background-color: #000;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00ff00;
+  color: #000;
+}
+
+#result {
+  color: #00ff00;
+  font-size: 22px; /* Réduire la taille de la police pour les petits écrans */
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+#word {
+  color: #00ff00;
+ 
+  margin-top: 10px;
+  font-size: 22px; /* Réduire la taille de la police pour les petits écrans */
+  font-weight: 900;
+}
+
+/* Ajout de styles pour améliorer la lisibilité sur de petits écrans */
+@media screen and (max-width: 600px) {
+  #container {
+    width: 95%; /* Ajuster davantage pour les petits écrans */
+    margin: 5px; /* Ajout de marges pour un meilleur espacement */
+  }
+
+  #result {
+    font-size: 16px; /* Ajuster la taille de la police pour les petits écrans */
+    font-weight: 900;
+  }
+
+  #word {
+    font-size: 12px; /* Ajuster la taille de la police pour les petits écrans */
+    font-weight: 900;
+  }
+}
