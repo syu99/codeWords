@@ -67,7 +67,7 @@ function updateWord(letter, isDecrement) {
   } else {
     currentWord += letter;
   }
-  document.getElementById('word').textContent = `Mot en cours : ${currentWord}`;
+  document.getElementById('word-display').textContent = currentWord;
 }
 
 // Function to calculate the total numeric value and update the result
@@ -95,7 +95,7 @@ function resetResult() {
   increments = {};
   decrements = {};
   currentWord = '';
-  document.getElementById('word').textContent = 'Mot en cours : ';
+  document.getElementById('word-display').textContent = '';
   document.getElementById('word-input').value = ''; // Clear the input field
   calculateTotal();
 }
