@@ -45,14 +45,17 @@
     <h2>Calculateur de Valeurs Numériques</h2>
     <p id="instructions">Chaque lettre a une valeur numérique. Renseignez votre mot et obtenez sa valeur numérologique (on ne réduit jamais les nombres maîtres 11/22/33).</p>
     <p id="instructions">(avec le clavier pour réinitialiser faites "SPACE")</p>
-
+  
     <div id="buttons-container"></div>
-
+  
     <p>Résultat : <span id="result">0</span></p>
-    <p id="word">Mot en cours : </p>
-
+    <p id="word">Mot en cours : <span id="word-display"></span></p>
+  
+    <!-- New input field for entering the word on mobile -->
+    <input type="text" id="word-input" placeholder="Entrez votre mot">
+  
     <button onclick="resetResult()">Réinitialiser</button>
-
+  
     <!-- Nouvelle zone de texte pour la valeur numérologique -->
     <p>Valeur Numérologique : <span id="numerology">0</span></p>
   </div>
