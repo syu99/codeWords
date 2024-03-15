@@ -9,28 +9,11 @@ body {
   min-height: 100vh;
   margin: 0;
   font-weight: 900;
+  overflow: hidden;
 }
 
 h2 {
   color: #00ff00;
-}
-#instructions {
-  font-size: 12px;
-  color: #00ff00;
-  margin-bottom: 10px;
-}
-
-#container {
-  width: 90%;
-  max-width: 600px;
-  text-align: center;
-  margin: 10px; /* Ajout de marges pour un meilleur espacement */
-}
-
-#buttons-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 button {
@@ -38,8 +21,9 @@ button {
   background-color: #000;
   color: #00ff00;
   border: 1px solid #00ff00;
-  padding: 5px 10px;
+  padding: 10px 15px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 button:hover {
@@ -47,35 +31,42 @@ button:hover {
   color: #000;
 }
 
-#result {
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#container {
+  position: relative;
+  z-index: 1;
+  width: 90%; /* Ajustement pour une meilleure lisibilité */
+}
+
+#result, #word {
   color: #00ff00;
-  font-size: 22px; /* Réduire la taille de la police pour les petits écrans */
+  font-size: 22px;
   font-weight: 900;
   margin-top: 10px;
 }
 
-#word {
-  color: #00ff00;
- 
-  margin-top: 10px;
-  font-size: 22px; /* Réduire la taille de la police pour les petits écrans */
-  font-weight: 900;
-}
-
-/* Ajout de styles pour améliorer la lisibilité sur de petits écrans */
 @media screen and (max-width: 600px) {
-  #container {
-    width: 95%; /* Ajuster davantage pour les petits écrans */
-    margin: 5px; /* Ajout de marges pour un meilleur espacement */
+  #result, #word {
+    font-size: 16px;
   }
-
-  #result {
-    font-size: 16px; /* Ajuster la taille de la police pour les petits écrans */
-    font-weight: 900;
+  
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
   }
+}
 
-  #word {
-    font-size: 12px; /* Ajuster la taille de la police pour les petits écrans */
-    font-weight: 900;
+@media screen and (max-width: 320px) {
+  h2, #result, #word, button {
+    font-size: 12px;
   }
 }
