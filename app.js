@@ -12,7 +12,7 @@ function createButton(letter) {
   // Get numeric value for the letter
   const value = getLetterValue(letter);
   const orderNumber = getLetterOrderNumber(letter);
-  // Set button text content with blue color for letters
+  // Set button text content
   button.innerHTML = `<span style="color: yellow;">${letter}</span> nº${orderNumber} (<span style="color: red;">${value}</span>)`;
   // Add event listener for button click
   button.addEventListener('click', () => handleButtonClick(letter));
@@ -83,6 +83,7 @@ function calculateTotal() {
     total -= getLetterValue(letter) * decrements[letter];
   }
   document.getElementById('result').textContent = total;
+  // Adjusted to correctly handle master numbers
   document.getElementById('numerology').textContent = reduceToSingleDigit(total);
 }
 
@@ -92,12 +93,19 @@ function playButtonSound() {
   audio.play();
 }
 
-// Function to reduce a number to a single digit
+// Function to reduce a number to a single digit, except master numbers (11, 22, 33)
 function reduceToSingleDigit(num) {
-  while (num > 9) {
-    num = num.toString().split('').reduce((acc, digit) => acc + parseInt(digit, 10), 0);
+  if ([11, 22, 33].includes(num)) {
+    return num; // Return the master number unchanged
   }
-  return num;
+  let sum = num;
+  while (sum > 9 && ![11, 22, 33].includes(sum)) {
+    sum = sum.toString().split('').reduce((acc, digit) => acc + parseInt(digit, 10), 0);
+    if ([11, 22, 33].includes(sum)) {
+      return sum; // Return the master number unchanged
+    }
+  }
+  return sum;
 }
 
 // Function to reset the result and clear input fields
@@ -128,8 +136,13 @@ function handleKeyPress(event) {
     }
   } else if (key === 'Backspace') {
     event.preventDefault();
-    const lastLetter = currentWord.charAt(currentWord.length - 1).toUpperCase();
-    updateWord(lastLetter, true);
+    if (currentWord.length > 0) {
+      const lastLetter = currentWord.charAt(currentWord.length - 1).toUpperCase();
+      // Update word display
+      updateWord(lastLetter, true);
+      // Correctly decrement the value for the removed letter
+      decrementValue(lastLetter, true); // Adjusted function to handle decrement
+    }
   } else if (key === 'Enter' || key === 'ArrowDown' || key === ' ') {
     event.preventDefault();
     resetResult();
