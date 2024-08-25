@@ -1,7 +1,6 @@
 # CodeWords - Calcules la valeur numérologique d'un mot
 ![Aperçu de CodeWords](codewords.png)
 ## Description
-FaceUp is a mobile application that allows you to capture, save, and view your favorite photos in one place.
 **CodeWords** est une application destinée aux professionnels de la numérologie. Cette application permet de calculer la valeur numérologique d'un mot en temps réel. L'application est conçue pour une utilisation optimale aussi bien sur ordinateur de bureau que sur mobile, avec des fonctionnalités adaptées à chaque format.
 
 ## Fonctionnalités
