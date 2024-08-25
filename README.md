@@ -22,7 +22,7 @@
 
 ### Accès à l'Application
 
-Pour utiliser l'application, que ce soit sur ordinateur ou sur mobile, rendez-vous à l'adresse suivante : 
+Pour utiliser l'application, que ce soit sur ordinateur ou sur mobile, rendez-vous à l'adresse suivante :  
 [CodeWords - Calculateur de Valeurs Numériques](https://syu99.github.io/codeWords/).
 
 ### Mode Desktop
